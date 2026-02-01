@@ -28,7 +28,7 @@ pipeline {
                     sonar-scanner ^
                     -Dsonar.projectKey=week-12-devops-project ^
                     -Dsonar.sources=. ^
-                    -Dsonar.python.version=3.11
+                    -Dsonar.host.url=http://localhost:9090
                     """
                 }
             }
