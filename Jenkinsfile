@@ -5,15 +5,15 @@ pipeline {
 
         stage('Install & Test') {
             steps {
-                sh 'pip install -r requirements.txt'
-                sh 'pytest'
+                bat 'pip install -r requirements.txt'
+                bat 'pytest'
             }
         }
 
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '''
+                    bat '''
                     sonar-scanner \
                     -Dsonar.projectKey=week12-devops \
                     -Dsonar.sources=.
